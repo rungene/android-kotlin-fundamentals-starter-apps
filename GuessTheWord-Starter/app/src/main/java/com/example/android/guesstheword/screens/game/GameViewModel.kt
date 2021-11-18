@@ -1,5 +1,8 @@
 package com.example.android.guesstheword.screens.game
 
-class GameViewModel {
+import androidx.lifecycle.ViewModel
+
+class GameViewModel : ViewModel() {
+
 
 }
