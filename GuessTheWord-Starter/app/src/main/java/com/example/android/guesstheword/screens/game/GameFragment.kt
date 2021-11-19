@@ -61,7 +61,7 @@ class GameFragment : Fragment() {
 
         //Initialize the ViewModel, using the ViewModelProvider.get() method to create a ViewModelProvider
         Log.i("GameFragment", "Called ViewModelProvider.get")
-        viewModel=ViewModelProvider(this).get(GameViewModel::class.java)
+        viewModel= ViewModelProvider(this)[GameViewModel::class.java]
 
         resetList()
         nextWord()
