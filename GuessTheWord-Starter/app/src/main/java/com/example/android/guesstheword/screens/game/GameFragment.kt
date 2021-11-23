@@ -106,7 +106,7 @@ class GameFragment : Fragment() {
     }
 
     private fun onEndGame() {
-
+gameFinished()
     }
 
 }
