@@ -91,4 +91,8 @@ class GameFragment : Fragment() {
     private fun updateScoreText() {
         binding.scoreText.text = viewModel.score.toString()
     }
+
+    private fun onEndGame() {
+    }
+
 }
