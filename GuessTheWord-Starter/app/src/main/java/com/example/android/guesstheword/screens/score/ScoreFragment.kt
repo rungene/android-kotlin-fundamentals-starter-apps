@@ -22,6 +22,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.example.android.guesstheword.R
 import com.example.android.guesstheword.databinding.ScoreFragmentBinding
@@ -51,6 +52,13 @@ class ScoreFragment : Fragment() {
         // Pass in the final score from the argument bundle, as a constructor parameter
         // to the ScoreViewModelFactory().
         viewModelFactory= ScoreViewModelFactory(ScoreFragmentArgs.fromBundle(requireArguments()).score)
+
+ // initialize the viewModel object. Call the ViewModelProvider.get() method, pass in the
+        // associated score fragment context and viewModelFactory. This will create the
+        // ScoreViewModel object using the factory method defined in the viewModelFactory class.
+
+        viewModel = ViewModelProvider(this,viewModelFactory)[ScoreViewModel::class.java]
+
 
         return binding.root
     }
