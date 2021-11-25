@@ -59,6 +59,9 @@ class ScoreFragment : Fragment() {
 
         viewModel = ViewModelProvider(this,viewModelFactory)[ScoreViewModel::class.java]
 
+   //set the text of the scoreText view to the final score defined in the ScoreViewModel
+   binding.scoreText.text=viewModel.score.toString()
+
 
         return binding.root
     }
