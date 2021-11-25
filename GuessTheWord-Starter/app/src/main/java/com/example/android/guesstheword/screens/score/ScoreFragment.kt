@@ -47,6 +47,10 @@ class ScoreFragment : Fragment() {
                 container,
                 false
         )
+  // initialize the viewModelFactory. Use the ScoreViewModelFactory.
+        // Pass in the final score from the argument bundle, as a constructor parameter
+        // to the ScoreViewModelFactory().
+        viewModelFactory= ScoreViewModelFactory(ScoreFragmentArgs.fromBundle(requireArguments()).score)
 
         return binding.root
     }
