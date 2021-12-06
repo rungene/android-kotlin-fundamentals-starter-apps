@@ -20,13 +20,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.navArgs
 import com.example.android.guesstheword.R
 import com.example.android.guesstheword.databinding.ScoreFragmentBinding
+import com.example.android.guesstheword.screens.game.GameFragmentDirections
 
 /**
  * Fragment where the final score is shown, after the game is over
@@ -63,8 +66,15 @@ class ScoreFragment : Fragment() {
    //set the text of the scoreText view to the final score defined in the ScoreViewModel
    binding.scoreText.text=viewModel.score.toString()
         binding.playAgainButton.visibility=View.VISIBLE
+        binding.playAgainButton.setOnClickListener { replayGame() }
 
 
         return binding.root
+    }
+
+    private fun replayGame(){
+
+        val action = ScoreFragmentDirections.actionRestart()
+        NavHostFragment.findNavController(this).navigate(action)
     }
 }
