@@ -20,6 +20,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -61,6 +62,7 @@ class ScoreFragment : Fragment() {
 
    //set the text of the scoreText view to the final score defined in the ScoreViewModel
    binding.scoreText.text=viewModel.score.toString()
+        binding.playAgainButton.visibility=View.VISIBLE
 
 
         return binding.root
